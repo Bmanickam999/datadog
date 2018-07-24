@@ -8,7 +8,7 @@ use Zend\Mvc\Controller\Plugin\Params;
 use Zend\Console\Adapter\AdapterInterface as ConsoleAdapter;
 use Zend\Console\ColorInterface as Color;
 
-class ShortStats implements
+final class ShortStats implements
     RuleInterface
 {
     public function __invoke(ConsoleAdapter $console, Params $params, array $lines, int $runNumber)

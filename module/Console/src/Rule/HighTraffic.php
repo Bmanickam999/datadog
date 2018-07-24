@@ -9,7 +9,7 @@ use Zend\Mvc\Controller\Plugin\Params;
 use Zend\Console\Adapter\AdapterInterface as ConsoleAdapter;
 use Zend\Console\ColorInterface as Color;
 
-class HighTraffic implements
+final class HighTraffic implements
     RuleInterface
 {
     private $isAlerting = false;
