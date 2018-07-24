@@ -39,7 +39,7 @@ final class ShortStats implements
         $sectionCount = [];
         foreach ($path as $p) {
             $section = strtok($p, '/');
-            if (!$section) {
+            if (! $section) {
                 $section = '/';
             }
             $sectionCount[$section] = $sectionCount[$section] ?? 0;

@@ -70,7 +70,7 @@ class HttpTrafficController extends AbstractConsoleController
             $adapter->setElements([ConsoleProgressBarAdapter::ELEMENT_BAR]);
             $progressBar = new ProgressBar($adapter, 0, 10);
 
-            for ($i = 1 ; $i <= 10; $i++) {
+            for ($i = 1; $i <= 10; $i++) {
                 sleep(1);
                 $progressBar->update($i);
             }
@@ -99,7 +99,13 @@ class HttpTrafficController extends AbstractConsoleController
             }
             $lineSeconds = sizeof($lines) * 10;
 
-            $this->getConsole()->writeLine($lineCount . ' new lines in last ' . $lineSeconds . ' seconds.', Color::CYAN);
+            $this->getConsole()->writeLine(
+                $lineCount
+                    . ' new lines in last '
+                    . $lineSeconds
+                    . ' seconds.',
+                Color::CYAN
+            );
         }
     }
 }
