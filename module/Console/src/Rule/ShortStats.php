@@ -22,11 +22,13 @@ class ShortStats implements
 
         $path = [];
         $visitors = [];
+        $identity = [];
         $bytes = 0;
         $four04 = 0;
 
         foreach ($lines[$runNumber] as $line) {
             $visitors[] = $line['remote_host'];
+            $identity[] = $line['identity'];
             $path[] = $line['request']['path'];
             $bytes += $line['bytes_sent'];
             if ($line['response_code'] == 404) {
@@ -47,10 +49,12 @@ class ShortStats implements
         $sectionCount = array_reverse($sectionCount);
 
         $console->writeLine("Requests: " . sizeof($lines[$runNumber]), Color::YELLOW);
-        $console->writeLine("Unique Visitors: " . sizeof(array_unique($visitors)), Color::YELLOW);
+        $console->writeLine("Unique Hosts: " . sizeof(array_unique($visitors)), Color::YELLOW);
+        $console->writeLine("Unique Identity: " . sizeof(array_unique($identity)), Color::YELLOW);
         $console->writeLine("Bytes Sent: " . $bytes, Color::YELLOW);
         $console->writeLine("404: " . $four04, Color::YELLOW);
         $console->writeLine("Popular Sections:", Color::YELLOW);
+        $sectionCount = array_slice($sectionCount, 0, 5);
         foreach ($sectionCount as $section => $count) {
             $console->writeLine('    ' . $section . ' - ' . $count, Color::YELLOW);
         }
