@@ -1,23 +1,31 @@
 Install
 =======
 
-This application requires PHP 7.1 or 7.2
+This application requires Docker
 
 Clone the repository
 ```sh
 git clone git@github.com:TomHAnderson/datadog
 ```
 
-Change into the datadog directory and fetch the vendors
-```sh
+Change into the datadog directory, build docker and run it
+```
 cd datadog
+docker-compose build
+docker-compose run --rm php bash
+```
+
+Fetch the vendors
+```sh
 ./composer.phar install
 ```
 
-The console route for running the http traffic monitor takes two 
+The console route for running the http traffic monitor takes two
 optional parameters:
 
 * --log=/path/to/common_log_formatted_log - This is the log file to watch
+    Note the docker environment does not have a file at /var/log/access.log (the default) but the repository
+    includes an `access.log` file in the root directory which you can write to from outside Docker for testing.
 * --threshold-alert=[integer] - This is the number of requests per second which should trigger a high traffic alert
 
 Run the application
@@ -27,6 +35,6 @@ php public/index.php http:traffic:monitor
 
 Example with optional parameters
 ```sh
-php public/index.php http:traffic:monitor --log=/var/log/http --threshold-alert=5
+php public/index.php http:traffic:monitor --log=access.log --threshold-alert=5
 ```
 
