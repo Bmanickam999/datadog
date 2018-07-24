@@ -24,8 +24,6 @@ The console route for running the http traffic monitor takes two
 optional parameters:
 
 * --log=/path/to/common_log_formatted_log - This is the log file to watch
-    Note the docker environment does not have a file at /var/log/access.log (the default) but the repository
-    includes an `access.log` file in the root directory which you can write to from outside Docker for testing.
 * --threshold-alert=[integer] - This is the number of requests per second which should trigger a high traffic alert
 
 Run the application
