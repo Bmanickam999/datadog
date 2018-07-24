@@ -17,7 +17,7 @@ docker-compose run --rm php bash
 
 Fetch the vendors
 ```sh
-./composer.phar install
+composer install
 ```
 
 The console route for running the http traffic monitor takes two
