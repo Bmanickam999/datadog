@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true">
     <testsuites>
-        <testsuite name="ZendSkeletonApplication Test Suite">
-            <directory>./module/Application/test</directory>
+        <testsuite name="Datadog">
+            <directory>./test</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./module</directory>
+            <directory suffix=".php">./config</directory>
+            <exclude>
+                <directory>./vendor</directory>
+                <file>./config/application.config.php</file>
+                <file>./config/development.config.php</file>
+                <file>./config/autoload/global-development.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
