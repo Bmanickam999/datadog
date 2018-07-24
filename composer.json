@@ -47,6 +47,7 @@
         "test": "phpunit"
     },
     "require-dev": {
-        "zendframework/zend-test": "^3.0.1"
+        "zendframework/zend-test": "^3.0.1",
+        "phpunit/phpunit": "^7.2"
     }
 }
