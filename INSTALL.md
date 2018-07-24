@@ -36,3 +36,8 @@ Example with optional parameters
 php public/index.php http:traffic:monitor --log=access.log --threshold-alert=5
 ```
 
+Test the Unit Tests including generating code coverage report
+(code covergae report will show 100% for the HighTraffic rule)
+```sh
+vendor/bin/phpunit --coverage-html=coverage
+```

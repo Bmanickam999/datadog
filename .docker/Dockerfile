@@ -13,6 +13,7 @@ RUN apk add --no-cache \
 	git \
 	openssl-dev
 
+RUN pecl install xdebug && docker-php-ext-enable xdebug 
 RUN echo -e 'memory_limit=2G' > /usr/local/etc/php/conf.d/memory.ini
 RUN set -o pipefail && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN touch /var/log/access.log
