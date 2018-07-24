@@ -18,11 +18,14 @@
         "zfcampus/zf-development-mode": "^3.0",
         "zendframework/zend-mvc-console": "^1.1.10",
         "zendframework/zend-mvc-i18n": "^1.0",
-        "zendframework/zend-servicemanager-di": "^1.0"
+        "zendframework/zend-servicemanager-di": "^1.0",
+        "mvar/apache2-log-parser": "^2.1",
+        "zendframework/zend-progressbar": "^2.6"
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/"
+            "Application\\": "module/Application/src/",
+            "Console\\": "module/Console/src/"
         }
     },
     "autoload-dev": {
