@@ -18,7 +18,7 @@ class Module implements
     public function getConsoleUsage(Console $console): array
     {
         return [
-            'http:traffic:monitor'
+            'http:traffic:monitor [--log=] [--threshold-alert=]'
             => 'Monitor HTTP Traffic',
         ];
     }
